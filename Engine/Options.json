@@ -1,0 +1,56 @@
+{
+	"options": {
+		"debug": false
+	},
+	"connection": {
+		"cluster": "aws",
+		"reconnect": true
+	},
+	"identity": {
+		"username": "TehhProBot",
+		"password": "oauth:29r5y7ycygahrkxz06c0wul2eacf4u"
+	},
+	"admins": [
+		"tehhpro",
+		"dev_l0rd",
+		"tehhprogaming"
+	],
+	"channels": [
+		"#tehhpro",
+		"#tehhprogaming"
+	],
+	"ignoredUsernames": [
+		"nightbot"
+	],
+	"pointGainPerMinute": 1,
+	"pointGainPerChatTick": 0.05,
+	"pointsPerChat": 0.5,
+	"pointsName": "schmeckles",
+	"markovEnabled": true,
+	"markovLearningChannels": [],
+	"markovDoesReply": true,
+	"markovLearningMaxLength": 100,
+	"markovFilterBadWords": true,
+	"muted": false,
+	"floatingMessages": false,
+	"commandSpamTimeout": 0,
+	"chatSpamTimeout": 0,
+	"ViewerstoppedChattingTimeoutMinutes": 8,
+	"ChatsPerTickToWhisper": 4,
+	"whisperIsSubscriberOnly": true,
+	"whisperIsModOnly": false,
+	"broadcasts": {
+		"#tehhpro": [
+			{
+				"broadcastIntervalMinutes": 15,
+				"message": "Add TehhPro on Snapchat to see when I go live!",
+				"nextBroadcast": 1505883204811
+			}
+		]
+	},
+	"viewerDbPath": "./Engine/DB/viewerDB.json",
+	"statsDbPath": "./Engine/DB/statsDB.json",
+	"playerDeleteTimeoutDays": 30,
+	"botIsPaused": false,
+	"subsGetDoublePointGain": true
+}

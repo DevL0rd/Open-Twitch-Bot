@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Open Stats</title>
+    <meta name="viewport" content="width=device-width">
+   
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/shapeshift/jquery.shapeshift.js"></script>
+    <script src="/js/socket.io.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+</head>
+<body>
+	<canvas id="canvas_bg" style="position:absolute;">
+        Canvas not supported with current browser.
+    </canvas>
+    <canvas id="canvas_fg" style="position:absolute;">
+        Canvas not supported with current browser.
+    </canvas>
+
+    <div class="navbar">
+        <div class="menubtn">
+            <img src="img/menu.png" class="menuimg">
+
+        </div>
+        <div class="menusettingspanel">
+            <center>
+                Settings
+                <div class="menusettingsobj">
+                    <select class="selector" id="theme">
+                        <option class="selectoroption" value="Dark">Dark Theme</option>
+                    </select>
+                </div>
+                <div class="menusettingsobj">
+                    <div class="settingsInput">
+                        <input type='file' id='bgImageInput' onchange="readURL(this);" />
+                        <div class="bgChangeText">
+                            Change Background
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menusettingsobj">
+                    <select class="selector" id="pairedCmbo">
+                        <option class="selectoroption" value="0">Un-Paired</option>
+                    </select>
+                </div>
+                <div class="menusettingsobj">
+                    <input type="text" placeholder="TV Name..." id="tvNameInput" class="settingsInput" />
+                </div>
+                <div class="menusettingsobj">
+                    <input type="checkbox" id="tvModeCheckbox">TV Mode<br>
+                </div>
+                <div class="menusettingsobj">
+                    <input type="checkbox" id="transitionCheckbox">Auto Transition<br>
+                </div>
+            </center>
+        </div>
+        <img src="img/logo.png" class="logo">
+
+            <input type="text" id="searchInput" placeholder="Search..." />
+
+       
+
+        <div class="filters">
+            <span>
+                <select class="selector" id="Group"></select>
+                <select class="selector" id="Page"></select>
+               
+            </span>
+            <div id="reportrange" class="selector">
+                <div id="timeRangeStr" class="timeRangeStr">
+                    Today
+                </div>
+                    <span></span> <b class="caret"></b>
+                </div>
+        </div>
+
+        <div class="profileSelector">
+            <div class="profileButton">
+                <img src="img/doughboy.png" class="profileImage">
+            </div>
+            <center>
+                Login
+            </center>
+        </div>
+        <button class="btnTop" onclick="AddPanel(Group, Page, 'New Panel', '', [], {})">+</button>
+
+    </div>
+    <div class="container" id="container">
+
+    </div>
+    <div class="botbar">
+        <img src="img/logo.png" class="Blogo">
+        <img src="" class="Wlogo">
+        <div class="weatherBox">
+            <div class="weatherStr1">
+            </div>
+            <div class="weatherStr2">
+            </div>
+            <div class="weatherStr3">
+            </div>
+        </div>
+        <div class="profilePairedBox">
+            <div class="profileButton">
+                <img src="img/doughboy.png" class="profileImage">
+            </div>
+
+            <div class="connectionStatus">
+                <center>
+                    Paired
+                </center>
+            </div>
+        </div>
+        <div class="datetime">
+            <div class="time">
+            </div>
+            <div class="date">
+            </div>
+        </div>
+
+        <div class="botBarBtns">
+            <button class="btnBotBar" onclick="unTVmode()">Exit TV Mode</button>
+        </div>
+
+    </div>
+    <div id="pageOverlay">
+        <center>
+            <div id="pageOverlayText">
+            </div>
+        </center>
+    </div>
+    <script src="/js/client.js"></script>
+</body>
+
+</html>

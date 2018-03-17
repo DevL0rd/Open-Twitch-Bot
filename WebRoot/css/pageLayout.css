@@ -1,0 +1,46 @@
+body {	
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+    overflow: hidden;
+	background-color: lime;
+}
+
+#bgCanvas{
+    z-index: 0;
+	position:absolute;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+}
+#contentCanvas{
+    z-index: 1;
+	position:absolute;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+}
+#UI{
+    z-index: 2;
+	position:absolute;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+}
+#fgCanvas{
+    z-index: 999999;
+	position:absolute;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+}
+@font-face {
+font-family: bebas;
+src: url('/font/BEBAS.ttf')  format('truetype')
+}
