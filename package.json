@@ -1,26 +1,15 @@
 {
-  "name": "Devlord_Base_Server",
-  "description": "A modular web server for general use.",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "main": "./Server.js",
-  "directories": {
-    "Engine": "./Engine",
-    "WebRoot": "./WebRoot"
-  },
-  "engines": {
-    "node": ">=0.4.0"
-  },
-  "dependencies": {
-    "socket.io": "latest"
-  },
-  "devDependencies": {},
-  "license": "MIT",
-  "author": {
-    "name": "Dustin Harris",
-    "email": "dmhzmxn@gmail.com"
-  }
+    "dependencies": {
+        "mkdirp": "latest",
+        "tmi.js": "latest",
+        "youtube-node": "latest",
+        "deck": ">=0.0.3",
+        "lazy": ">=1.0.3",
+        "hashish": ">=0.0.2",
+        "request": "latest"
+    },
+    "author": {
+        "name": "Dustin Harris",
+        "email": "dmhzmxn@gmail.com"
+    }
 }

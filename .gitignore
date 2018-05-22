@@ -1,2 +1,4 @@
 node_modules/
-Logging/
+Logs/
+package-lock.json
+Plugins/TwitchBot/Config.json
