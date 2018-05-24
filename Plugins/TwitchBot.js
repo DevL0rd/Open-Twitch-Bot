@@ -10,10 +10,10 @@ var fs = require('fs');
 var markov = require(__dirname + '/TwitchBot/markov');
 var m = markov(1);
 var io = {}; //Gets loaded later
-var plugins = [];
+var botPlugins = [];
 fs.readdirSync(__dirname + "/TwitchBot/Plugins").forEach(function(file) {
     if (file.split(".").pop() == "js") {
-        plugins[file.split(".").shift()] = require(__dirname + "/TwitchBot/Plugins" + "/" + file);
+        botPlugins[file.split(".").shift()] = require(__dirname + "/TwitchBot/Plugins" + "/" + file);
     }
 });
 var markovBadWordListPath = __dirname + "/TwitchBot/markov/MarkovBadWordList.txt";
@@ -765,7 +765,7 @@ setInterval(function () {
 var ChatsBeforeTimeout = 0;
 var ChatsBeforeTimeoutTimeout
 
-function init(serverPlugins, settings, serverEvents, io, newlog, commands) {
+function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCommands) {
     log = newlog
     //on io connection, setup client data
     serverEvents['connection'].push(function (socket) {
@@ -1366,11 +1366,12 @@ function init(serverPlugins, settings, serverEvents, io, newlog, commands) {
         })
     }
 
-    log("Loading TwitchBot plugins...")
-    for (var i in plugins) {
+    log("Loading TwitchBot Plugins...")
+    for (var i in botPlugins) {
         log("Plugin '" + i + "' loaded.")
-        plugins[i].init(commands, events, markovReponses, options, viewerDB, display, say, statsDb);
+        botPlugins[i].init(commands, events, markovReponses, options, viewerDB, display, say, statsDb);
     }
+
     setTimeout(function () {
         options.options.debug = debug;
         DB.save(__dirname + "/TwitchBot/Config.json", options);
