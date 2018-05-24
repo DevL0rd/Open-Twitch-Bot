@@ -538,17 +538,17 @@
 			"highscore": 12.399999999999986
 		},
 		"tehhpro": {
-			"points": 58.900000000000524,
+			"points": 60.900000000000524,
 			"nextCommandAllowed": 1527012314226,
 			"nextChatAllowed": 1527012313226,
 			"lastChannel": "#tehhpro",
 			"subscribed": true,
 			"mod": false,
 			"bank": 0,
-			"lastChat": 1527012312226,
-			"stoppedChattingTimeout": 1527012792226,
-			"playerDeleteTimeout": 1529604312226,
-			"highscore": 51.90000000000044
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 60.900000000000524
 		},
 		"letmeseeitpoker": {
 			"points": 24.850000000000218,
@@ -817,11 +817,11 @@
 			"lastChannel": "#tehhpro"
 		},
 		"pauleyonrs": {
-			"points": 24.700000000000202,
-			"lastChat": 1527012252087,
-			"stoppedChattingTimeout": 1527012732087,
-			"playerDeleteTimeout": 1529604252087,
-			"highscore": 21.70000000000016,
+			"points": 25.700000000000202,
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 25.700000000000202,
 			"lastChannel": "#tehhpro"
 		},
 		"cheeesyvomit": {
@@ -881,35 +881,35 @@
 			"lastChannel": "#tehhpro"
 		},
 		"fingerection": {
-			"points": 3.999999999999994,
-			"lastChat": 1527012252087,
-			"stoppedChattingTimeout": 1527012732087,
-			"playerDeleteTimeout": 1529604252087,
-			"highscore": 1,
+			"points": 4.999999999999994,
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 4.999999999999994,
 			"lastChannel": "#tehhpro"
 		},
 		"mayenfailur": {
-			"points": 3.999999999999994,
-			"lastChat": 1527012252087,
-			"stoppedChattingTimeout": 1527012732087,
-			"playerDeleteTimeout": 1529604252087,
-			"highscore": 1,
+			"points": 4.999999999999994,
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 4.999999999999994,
 			"lastChannel": "#tehhpro"
 		},
 		"pyropure": {
-			"points": 3.999999999999994,
-			"lastChat": 1527012252087,
-			"stoppedChattingTimeout": 1527012732087,
-			"playerDeleteTimeout": 1529604252087,
-			"highscore": 1,
+			"points": 4.999999999999994,
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 4.999999999999994,
 			"lastChannel": "#tehhpro"
 		},
 		"rfrs123": {
-			"points": 3.999999999999994,
-			"lastChat": 1527012252087,
-			"stoppedChattingTimeout": 1527012732087,
-			"playerDeleteTimeout": 1529604252087,
-			"highscore": 1,
+			"points": 4.999999999999994,
+			"lastChat": 1527013161849,
+			"stoppedChattingTimeout": 1527013641849,
+			"playerDeleteTimeout": 1529605161849,
+			"highscore": 4.999999999999994,
 			"lastChannel": "#tehhpro"
 		},
 		"lardmustard": {

@@ -58,7 +58,7 @@ if (fs.existsSync(__dirname + "/Settings/YoutubeMusic.json")) {
 } else {
     settings = {
         volume: 0.6,
-        youtubeApiKey: "AIzaSyB_LEvbvxljoTEihjC-9dWelHHli4IoVns"
+        youtubeApiKey: ""
     }
     DB.save(__dirname + "/Settings/YoutubeMusic.json", settings)
 }

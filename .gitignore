@@ -2,3 +2,4 @@ node_modules/
 Logs/
 package-lock.json
 Plugins/TwitchBot/Config.json
+Plugins/TwitchBot/Plugins/Settings/YoutubeMusic.json
