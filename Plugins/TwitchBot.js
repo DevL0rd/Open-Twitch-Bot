@@ -11,7 +11,7 @@ var markov = require(__dirname + '/TwitchBot/markov');
 var m = markov(1);
 var io = {}; //Gets loaded later
 var botPlugins = [];
-fs.readdirSync(__dirname + "/TwitchBot/Plugins").forEach(function(file) {
+fs.readdirSync(__dirname + "/TwitchBot/Plugins").forEach(function (file) {
     if (file.split(".").pop() == "js") {
         botPlugins[file.split(".").shift()] = require(__dirname + "/TwitchBot/Plugins" + "/" + file);
     }
@@ -1385,12 +1385,20 @@ function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCom
         }
         client.connect();
     }, 100)
-    commands.say = function (message, messageLowercase, arguments) {
-        say(options.channels[0], "", message, false);
+    serverCommands.say = {
+        usage: "say [message]",
+        help: "Makes bot broadcast the message.",
+        do: function (message, messageLowercase, arguments) {
+            say(options.channels[0], "", message, false);
+        }
     }
-    commands.commands = function (message, messageLowercase, arguments) {
-        for (command in commands) {
-            console.log(command);
+    serverCommands.botHelp = {
+        usage: "botHelp",
+        help: "Lists all twitchbot commands that can be typed in the twitch chat.",
+        do: function (message, messageLowercase, arguments) {
+            for (command in commands) {
+                console.log(command);
+            }
         }
     }
 }
