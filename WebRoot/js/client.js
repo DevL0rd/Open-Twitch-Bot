@@ -1,7 +1,5 @@
 // Authour: DevL0rd
 // GitHub: https://github.com/DevL0rd
-// Last Update: 8/22/2017
-// Version: 1
 var Version = 0;
 // Force debug until you make UI to toggle it
 var debugenabled = false;
@@ -229,7 +227,7 @@ socket.on('DisplayMedia', function (displayObject) {
         if (displayObject.fadein > 0) {
             elem.style.display = 'none'
             document.getElementById('GenerativeContent').appendChild(elem)
-            $(elem).fadeIn(displayObject.fadein, function () {})
+            $(elem).fadeIn(displayObject.fadein, function () { })
         } else {
             document.getElementById('GenerativeContent').appendChild(elem)
         }
@@ -341,7 +339,7 @@ socket.on('DisplayText', function (displayObject) {
         if (displayObject.fadein > 0) {
             elem.style.display = 'none'
             document.getElementById('GenerativeContent').appendChild(elem)
-            $(elem).fadeIn(displayObject.fadein, function () {})
+            $(elem).fadeIn(displayObject.fadein, function () { })
         } else {
             document.getElementById('GenerativeContent').appendChild(elem)
         }
