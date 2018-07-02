@@ -1,7 +1,5 @@
-//Authour: Dustin Harris
+//Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 3/17/2018
-//Version: 1.0.0
 function init(plugins, settings, events, io, log, commands) {
     commands.refresh = {
         usage: "refresh",

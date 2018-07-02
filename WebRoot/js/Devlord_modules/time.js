@@ -1,18 +1,16 @@
 //Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/22/2017
-//Version: 1
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
     var dat = new Date(this.valueOf());
     dat.setDate(dat.getDate() + days);
     return dat;
 }
-Date.prototype.subDays = function(days) {
+Date.prototype.subDays = function (days) {
     var dat = new Date(this.valueOf());
     dat.setDate(dat.getDate() - days);
     return dat;
 }
-Date.prototype.getTimeStamp = function() {
+Date.prototype.getTimeStamp = function () {
     var now = new Date(this.valueOf());
     var date = [now.getFullYear(), now.getMonth() + 1, now.getDate()];
     var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -21,7 +19,7 @@ Date.prototype.getTimeStamp = function() {
     return date.join("/") + " " + hours + ":" + minutes + ":" + seconds;
 }
 
-Date.prototype.getPathTimeStamp = function() {
+Date.prototype.getPathTimeStamp = function () {
     var now = new Date(this.valueOf());
     var date = [now.getFullYear(), now.getMonth() + 1, now.getDate()];
     var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -29,7 +27,7 @@ Date.prototype.getPathTimeStamp = function() {
     var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
     return date.join("-") + "_" + hours + "-" + minutes + "-" + seconds;
 }
-Date.prototype.formatAMPM = function() {
+Date.prototype.formatAMPM = function () {
     var date = new Date(this.valueOf());
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -42,7 +40,7 @@ Date.prototype.formatAMPM = function() {
     return strTime;
 };
 
-Date.prototype.formatDate = function(format, utc = true) {
+Date.prototype.formatDate = function (format, utc = true) {
     var date = new Date(this.valueOf());
     var MMMM = ["\x00", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var MMM = ["\x01", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

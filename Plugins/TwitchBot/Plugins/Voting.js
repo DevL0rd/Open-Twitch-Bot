@@ -1,7 +1,5 @@
 //Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/22/2017
-//Version: 1
 /////////////////////////////////
 //Public vars and functions here
 
@@ -42,8 +40,8 @@ function init(commands, events, responses, options, viewerDB, display, say, stat
             } else {
                 //increase vote for option
                 voteAnswers[param].votes++
-                    //add user to voters list
-                    voters.push(user.username)
+                //add user to voters list
+                voters.push(user.username)
             }
         } else if (!isVoting && param != "" && param != "vote" && voteAnswers[param] == null) {
             //if no voting is going on, make new vote

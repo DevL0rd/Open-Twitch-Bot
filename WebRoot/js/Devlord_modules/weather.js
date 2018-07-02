@@ -1,16 +1,15 @@
 //Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/22/2017
-//Version: 1
 var weatherIntervalID = 0
-var weather = { icon: new Image(),init: function(interval = 300000, funcOnUpdate = function () {}) {
-	this.onUpdate = funcOnUpdate;
-	getweather();
-	clearInterval(weatherIntervalID);
-	weatherIntervalID = setInterval(function () {
-		getweather();
-	}, 300000);
-}
+var weather = {
+    icon: new Image(), init: function (interval = 300000, funcOnUpdate = function () { }) {
+        this.onUpdate = funcOnUpdate;
+        getweather();
+        clearInterval(weatherIntervalID);
+        weatherIntervalID = setInterval(function () {
+            getweather();
+        }, 300000);
+    }
 }
 
 var xhr_weather = new XMLHttpRequest();
@@ -66,12 +65,12 @@ function QueryWeather(Pos) {
                     weather.windspeed = tmpweather.wind.speed
                     weather.winddirection = tmpweather.wind.deg
                     weather.location = tmpweather.name
-                    $(".weatherStr2").text(weather.temp + "ÅãF  Feels Like: " + weather.windchill + "ÅãF")
+                    $(".weatherStr2").text(weather.temp + "ÔøΩÔøΩF  Feels Like: " + weather.windchill + "ÔøΩÔøΩF")
                     $(".weatherStr3").text("Humidity: " + weather.humidity + "%  Wind: " + weather.windspeed + " mph")
                     if (tmpweather.visibility != undefined) {
                         weather.visibility = round(parseInt(tmpweather.visibility) * 0.000621371, 2)
                     }
-					weather.onUpdate()
+                    weather.onUpdate()
                 }
                 // file is loaded
             } else {

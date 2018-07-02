@@ -1,7 +1,5 @@
-//Authour: DevL0rd, tehhpro
+//Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/28/2017
-//Version: 1.1
 /////////////////////////////////
 //Public vars and functions here
 
@@ -184,10 +182,10 @@ function init(commands, events, responses, options, viewerDB, display, say, stat
                                         user1HP = 0;
                                     }
                                     if (damage > 0) {
-                                       // display.audio("/audio/whip.mp3", 0.5, "stakes")
+                                        // display.audio("/audio/whip.mp3", 0.5, "stakes")
                                         display.media(10, 70, 50, 50, "/img/hitsplat.png", "stakes", 0, 1450, 50);
                                     } else {
-                                       // display.audio("/audio/0whip.mp3", 0.5, "stakes")
+                                        // display.audio("/audio/0whip.mp3", 0.5, "stakes")
                                         display.media(10, 70, 50, 50, "/img/hitsplatblue.png", "stakes", 0, 1450, 50);
                                     }
                                     var offset = !0;

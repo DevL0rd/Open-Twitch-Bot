@@ -1,7 +1,5 @@
 //Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/28/2017
-//Version: 1.2
 /////////////////////////////////
 //Public vars and functions here
 var YouTube = require('youtube-node');

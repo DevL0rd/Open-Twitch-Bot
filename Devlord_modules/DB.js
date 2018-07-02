@@ -1,7 +1,5 @@
-//Authour: Dustin Harris
+//Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 3/17/2018
-//Version: 1.0.1
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var getDirName = require('path').dirname;

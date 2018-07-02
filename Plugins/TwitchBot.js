@@ -1,8 +1,5 @@
 //Authour: DevL0rd
 //GitHub: https://github.com/DevL0rd
-//Last Update: 8/22/2017
-//Version: 1
-
 //Initial requires.
 var tmi = require('tmi.js');
 var util = require('util');
