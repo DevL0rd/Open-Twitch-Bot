@@ -1,0 +1,52 @@
+{
+	"IP": "0.0.0.0",
+	"PORT": 80,
+	"timeout": 5000,
+	"maxHeadersCount": 20,
+	"maxPostSizeMB": 8,
+	"maxUrlLength": 2048,
+	"directoryIndex": [
+		"index.html"
+	],
+	"webRoot": "../Open-Twitch-Bot/WebRoot",
+	"pluginsPath": "../Open-Twitch-Bot/Plugins",
+	"throttling": {
+		"videoBitRateKB": 51000,
+		"audioBitRateKB": 230,
+		"applicationDownloadThrottleMB": 15
+	},
+	"defaultHeaders": {
+		"Cache-Control": "max-age=0",
+		"X-Frame-Options": "SAMEORIGIN",
+		"X-XSS-Protection": "1; mode=block",
+		"X-Content-Type-Options": "nosniff"
+	},
+	"security": {
+		"hotlinkProtection": {
+			"enabled": false,
+			"domains": [
+				"localhost"
+			],
+			"allowedExtensions": [
+				"htm",
+				"html"
+			]
+		},
+		"blockedPaths": [],
+		"blockedFiles": [],
+		"blockedFileNames": [],
+		"blockedFileExtensions": []
+	},
+	"logging": {
+		"enabled": true,
+		"directory": "../Open-Twitch-Bot/Logs",
+		"consoleLoggingEnabled": false,
+		"errorLoggingEnabled": true,
+		"printConsole": true,
+		"printErrors": true,
+		"consoleNamespacePrintFilter": [
+			"HTTP"
+		],
+		"errorNamespacePrintFilter": []
+	}
+}
