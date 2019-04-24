@@ -28,13 +28,8 @@ Open Twitch Bot requires [Node.js](https://nodejs.org/) v4+, and the modular web
     cd Open-Twitch-Bot
     npm install --save
      ```
-- Create a file named twitchBotServer.bat with the following script
-    ```sh
-    cd Modular-Web-Server
-    node Server.js ../Open-Twitch-Bot
-    ```
+- Start the server by opening this folder with the modular websever application to generact the Config.json file
 - Create a twitch account for your bot, sign into that account, and visit https://twitchapps.com/tmi/ to obtain your oauth token.
-- Run the server with twitchBotServer.bat to generact the Config.json file.
 - Open the Config.json file located in 'Open-Twitch-Bot/Plugins/TwitchBot/Config.json'
 - Set your bot's sign in details.
     ```javascript
