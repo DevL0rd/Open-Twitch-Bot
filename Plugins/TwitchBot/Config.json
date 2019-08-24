@@ -1,0 +1,53 @@
+{
+	"options": {
+		"debug": true
+	},
+	"connection": {
+		"cluster": "aws",
+		"reconnect": true
+	},
+	"identity": {
+		"username": "otbenigmabot",
+		"password": "oauth:6cxi37xc9ipfymzo4zrcwochrwmnij"
+	},
+	"admins": [
+		"tehhpro",
+		"dev_l0rd",
+		"kohda"
+	],
+	"channels": [
+		"#kohda"
+	],
+	"ignoredUsernames": [
+		"nightbot"
+	],
+	"pointGainPerMinute": 1,
+	"pointGainPerChatTick": 0.05,
+	"pointsPerChat": 0.5,
+	"pointsName": "points",
+	"markovEnabled": true,
+	"markovLearningChannels": [],
+	"markovDoesReply": true,
+	"markovLearningMaxLength": 100,
+	"markovFilterBadWords": true,
+	"muted": false,
+	"commandSpamTimeout": 2000,
+	"chatSpamTimeout": 1000,
+	"ViewerstoppedChattingTimeoutMinutes": 8,
+	"ChatsPerTickToWhisper": 4,
+	"whisperIsSubscriberOnly": true,
+	"whisperIsModOnly": false,
+	"broadcasts": {
+		"#kohda": [
+			{
+				"broadcastIntervalMinutes": 10,
+				"message": "To see all commands look below the stream."
+			}
+		]
+	},
+	"viewerDbPath": "C:\\GitHub\\Open-Twitch-Bot\\Plugins\\TwitchBot/viewerDB.json",
+	"statsDbPath": "C:\\GitHub\\Open-Twitch-Bot\\Plugins\\TwitchBot/stats.json",
+	"purgeUserFromDbTimeoutDays": 30,
+	"botIsPaused": false,
+	"subsGetDoublePointGain": true
+}

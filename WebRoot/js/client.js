@@ -263,7 +263,6 @@ socket.on('DisplayAudio', function (displayObject) {
             elem.style.position = 'absolute'
             elem.style.top = '-9999px'
             elem.style.left = '-9999px'
-
             document.getElementById('GenerativeContent').appendChild(elem)
             youtubeAudioVol = displayObject.vol
             player = new YT.Player('player', {
@@ -273,9 +272,10 @@ socket.on('DisplayAudio', function (displayObject) {
                 events: {
                     onReady: function (e) {
                         // video loaded
-                        e.target.playVideo()
-                        playerTarget = e.target
-                        e.target.setVolume(youtubeAudioVol * 100)
+                        e.target.unMute();
+                        e.target.playVideo();
+                        playerTarget = e.target;
+                        e.target.setVolume(youtubeAudioVol * 100);
                     },
                     onStateChange: function (event) {
                         if (event.data === 1) {

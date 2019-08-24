@@ -1,0 +1,213 @@
+Default Commands:
+********************************
+!about
+
+!biggestpurchase !largestpurchase !lp 
+	See who spent the most points and on what.
+!highscore !hs !mostpoints
+	See who has the most points.
+!help !commands
+	Get the message to tell users to look below the stream too see commands.
+!brainstats !bs
+	Get information about the size of the bots markov chain. (Self learning bots brain size)
+!bank
+	See bank balance.
+!deposit <ammount>
+	Put points in your bank account.
+!withdraw <ammount>
+	Withdraw points from your bank account.
+!points
+	See points balance.
+!give <username> <ammount>
+	Gives a user your points. Does not cost admins and moderators.
+!take <username>
+	Allows moderators and admins to take points from users.
+!drop <ammount>
+	Drops your points on the ground to let other users pick it up with !claim.
+	Multiple drops will stack.
+!claim
+	Claim the points on the ground.
+!website
+	List the website that is in the settings file.
+--ADMIN ONLY--
+!pausebot
+	Temporarily disable the bot.
+!unpausebot
+	Unpause the bots functions.
+!mute
+	Mute the automatic bot responses or generated responses.
+!markovtest !mt
+	Generate a test message to see what the bot has learned.
+!rest
+	Restart the twitch bot
+
+
+
+
+
+
+
+YoutubeMusic Plugin (DevLord):
+********************************
+This plugin optionally adds a overlay to OBS.
+User the overlay http://localhost/ to play audio through OBS. Else it will not work.
+Make sure to use the overlay http://localhost/?name=currentsong to show the current playing song.
+This song plays songs in the default playlist until a user spends points on a song request.
+You can also add a song to the playlist at anytime as long as it is playing wit !addsong or !as.
+
+
+!pl
+	Playlist length. Get the amount of songs in the current queue.
+!sr <songname/youtubeurl/youtubeID> !songrequest <songname/youtubeurl/youtubeID>
+	Spend points to request a song.
+!sn !songname
+	Get the name of the current song.
+
+--ADMIN ONLY--
+!play
+	Resume the current song.
+!pause
+	Pause the current song.
+!stop
+	Stop the current song.
+!addsong !as
+	Add the current song to the default play list.
+!removesong !deletesong !ds
+	Remove the current song from the default play list
+!skip !ss
+	Skip current song.
+
+!srtoggle
+	Turn on and off song requests.
+
+!srban <username> !songrequestban <username>
+	Ban a user from making song requests and remove all of their requested songs.
+	
+!vol <1-100>
+	Set the volume from 1-100
+
+
+
+
+
+Gambling Plugin (DevLord):
+********************************
+!fc
+	Flip a virtual coin.
+!gamble <ammount>
+	Gambles a certain ammount of points for a chance to double or even quadrupal your points.
+!gamble all/yolo/chuck
+	Gambles all of your money in hand. Not money in the bank.
+!gamble half
+	Gambles half of your money in hand
+
+!lg !largestgamble
+	See the largest gamble ever made.
+
+
+---MODERATOR / ADMIN ONLY---
+!rd
+	Rolls 1 dice
+!rd <ammount>
+	Rolls a few dice.
+
+
+Troll Commands Plugin (DevLord):
+********************************
+This is a list of commands users can spend their points on to do fun things in chat.
+To see the list of commands, as they are always changing, type !trolls
+
+
+
+
+Random Events Plugin (DevLord):
+********************************
+This is a plugin that adds random minigames to chat. As the games occur it explains the commands you need.
+No need to list commands here.
+
+
+
+
+
+Voting Plugin (DevLord):
+********************************
+This adds polls to the OTB.
+
+!vote <voteOption>
+	Use this to vote on the current open vote.
+
+--ADMIN ONLY--
+!vote <voteText> -o [option1 | option2 | option3]
+	You can make a simple vote like this. Here are the examples
+	Examples:
+		!vote Do you like chocolate?
+			This will make a yes or no vote.
+		!vote What color is the best? -o Black | White | Red
+			This will give the users the options to vote for Black, White, and red.
+
+
+
+
+
+Timer Plugin (DevLord):
+********************************
+	This adds timers with overlays to the stream.
+	Change img/brb.gif to change the brb image.
+
+!uptime
+	Show how long the stream has been active.
+
+---ADMIN ONLY---
+!brb <seconds>s
+	Adds a brb overlay to stream for specified time in seconds.
+!brb <minutes>m
+	Adds brb overlay to stream for specified time in minutes.
+
+!startstream <seconds/minutes>s/m
+	Same as brb but it's a countdown before the stream starts.
+
+
+
+
+
+
+Raffle Plugin (DevLord):
+********************************
+!raffleinfo
+	Displays to user the current raffle and last winner.
+
+!raffle <ammount>
+	Buy a certain ammount of tickets for 1 point each
+!raffle yolo/all/chuck
+	Spend all money in hand, not in bank, on raffle tickets.
+!raffle half
+	Spend half your money on raffle tickets.
+
+---ADMIN ONLY---
+
+!raffle <description>
+	Describe what the raffle is for.
+!raffle draw
+	Draw a user from the raffle and see who wins!
+	This displays to the main overlay as well on OBS.
+!raffle clear
+	Resets the raffle and clears the users from the entered users.
+	This refunds all users points they spent
+
+
+
+
+
+
+Giveaways Plugin (DevLord):
+********************************
+A giveaway system that adds an overlay to obs. The timeout is 1 minute to allow people to join it.
+
+
+!enter
+	Spend points to enter the current giveaway.
+
+---ADMIN ONLY---
+!giveaway <price>
+	Start a giveaway that costs a certain ammount to enter.
+

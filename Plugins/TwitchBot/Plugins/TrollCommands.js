@@ -246,9 +246,17 @@ function init(commands, events, responses, options, viewerDB, display, say, stat
                         http.get('http://autoinsult.datahamster.com/scripts/webinsult.server.php?xajax=generate_insult&xajaxargs[]=' + insulttype, (res) => {
                             res.setEncoding('utf8');
                             res.on('data', function (body) {
-                                say({
-                                    username: userToInsult
-                                }, channel, body.split("[CDATA[")[1].split("]]")[0] + ".", isPrivate)
+                                try {
+                                    var ins = body.split("[CDATA[")[1].split("]]")[0] + ".";
+                                    say({
+                                        username: userToInsult
+                                    }, channel, ins, isPrivate)
+                                } catch (err) {
+                                    say({
+                                        username: userToInsult
+                                    }, channel, "There was an issue generating an insult, but uhhmmm... you are a bitch... Also a refund will be provided.", isPrivate)
+                                    viewerDB.Viewers[insulte].points += insultprice;
+                                }
                             });
                             res.on('error', function (body) {
                                 say({

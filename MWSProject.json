@@ -1,4 +1,6 @@
 {
+	"Name": "Open-Twitch-Bot",
+	"Author": "DevL0rd",
 	"IP": "0.0.0.0",
 	"PORT": 80,
 	"timeout": 5000,
@@ -17,7 +19,6 @@
 	},
 	"defaultHeaders": {
 		"Cache-Control": "max-age=0",
-		"X-Frame-Options": "SAMEORIGIN",
 		"X-XSS-Protection": "1; mode=block",
 		"X-Content-Type-Options": "nosniff"
 	},

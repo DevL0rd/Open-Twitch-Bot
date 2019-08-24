@@ -45,7 +45,7 @@ function init(commands, events, responses, options, viewerDB, display, say, stat
                     //if param is all or yolo use all points
                     param = "" + viewerDB.Viewers[user.username].points;
                 } else if (param == "half") {
-                    //if param is all or yolo use all points
+                    //use half points
                     param = "" + viewerDB.Viewers[user.username].points / 2;
                 }
                 if ("" + parseInt(param) == "NaN") {

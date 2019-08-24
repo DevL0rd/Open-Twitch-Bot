@@ -58,7 +58,6 @@ function init(commands, events, responses, options, viewerDB, display, say, stat
         }
     }
 
-    //Make a new command
     //Make new giveaway
     commands.giveaway = function (channel, user, message, command, isPrivate) {
         //if user is a admin

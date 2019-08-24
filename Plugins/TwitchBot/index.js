@@ -4,22 +4,22 @@
 var tmi = require('tmi.js');
 var util = require('util');
 var fs = require('fs');
-var markov = require(__dirname + '/TwitchBot/markov');
+var markov = require(__dirname + '/markov');
 var m = markov(1);
 var io = {}; //Gets loaded later
 var botPlugins = [];
-fs.readdirSync(__dirname + "/TwitchBot/Plugins").forEach(function (file) {
+fs.readdirSync(__dirname + "/Plugins").forEach(function (file) {
     if (file.split(".").pop() == "js") {
-        botPlugins[file.split(".").shift()] = require(__dirname + "/TwitchBot/Plugins" + "/" + file);
+        botPlugins[file.split(".").shift()] = require(__dirname + "/Plugins" + "/" + file);
     }
 });
-var markovBadWordListPath = __dirname + "/TwitchBot/markov/MarkovBadWordList.txt";
-var markovBrainPath = __dirname + "/TwitchBot/markov/MarkovDB.json";
+var markovBadWordListPath = __dirname + "/markov/MarkovBadWordList.txt";
+var markovBrainPath = __dirname + "/markov/MarkovDB.json";
 
-var DB = require('../Devlord_modules/DB.js');
+var DB = require('../../Devlord_modules/DB.js');
 //Load DBS
-if (fs.existsSync(__dirname + "/TwitchBot/Config.json")) {
-    var options = DB.load(__dirname + "/TwitchBot/Config.json");
+if (fs.existsSync(__dirname + "/Config.json")) {
+    var options = DB.load(__dirname + "/Config.json");
 } else {
     var options = {
         options: {
@@ -33,7 +33,7 @@ if (fs.existsSync(__dirname + "/TwitchBot/Config.json")) {
             username: "",
             password: ""
         },
-        "admins": ["tehhpro", "dev_l0rd"],
+        "admins": ["tehhpro", "dev_l0rd", "kohda"],
         "channels": ["#channelname"],
         ignoredUsernames: ["nightbot"],
         pointGainPerMinute: 1,
@@ -58,8 +58,8 @@ if (fs.existsSync(__dirname + "/TwitchBot/Config.json")) {
                 "message": "To see all commands look below the stream."
             }]
         },
-        viewerDbPath: __dirname + "/TwitchBot/viewerDB.json",
-        statsDbPath: __dirname + "/TwitchBot/stats.json",
+        viewerDbPath: __dirname + "/viewerDB.json",
+        statsDbPath: __dirname + "/stats.json",
         purgeUserFromDbTimeoutDays: 30,
         botIsPaused: false,
         subsGetDoublePointGain: true
@@ -86,7 +86,7 @@ if (fs.existsSync(options.viewerDbPath)) {
     try {
         var viewerDB = DB.load(options.viewerDbPath)
     } catch (err) {
-        log("Viewer DB corrupt, restoring backup.", true)
+        log("Viewer DB corrupt, restoring backup.", true, "OTB")
         var viewerDB = DB.load(options.viewerDbPath + ".bkup")
     }
 
@@ -100,7 +100,7 @@ if (fs.existsSync(options.statsDbPath)) {
     try {
         var statsDb = DB.load(options.statsDbPath)
     } catch (err) {
-        log("Stats DB corrupt, restoring backup.", true)
+        log("Stats DB corrupt, restoring backup.", true, "OTB")
 
         var statsDb = DB.load(options.statsDbPath + ".bkup")
     }
@@ -120,7 +120,7 @@ if (fs.existsSync(markovBadWordListPath)) {
 m.readExternal(markovBrainPath);
 
 if (fs.existsSync(__dirname + '/new.txt')) {
-    log("Markov: Loading New text to learn...")
+    log("Markov: Loading New text to learn...", false, "OTB")
     var s = fs.createReadStream(__dirname + '/new.txt');
     m.seed(s, function () {
         m.writeExternal()
@@ -171,7 +171,7 @@ var events = {
         if (this[event] != null) {
             this[event].push(callback)
         } else {
-            log("ERROR: Event '" + event + "' is not found.", true)
+            log("ERROR: Event '" + event + "' is not found.", true, "OTB")
         }
     }
 };
@@ -209,7 +209,7 @@ function tryToAnswer(channel, user, message, isPrivate = false, directedToBot = 
         }
         return false;
     } catch (err) {
-        log(err, true)
+        log(err, true, "OTB")
         return false;
     }
 }
@@ -604,7 +604,7 @@ function tryResolvingCommand(channel, user, message, isPrivate = false) {
                     } else {
                         statsDb.commandUsage[command.split(" ")[0]]++;
                     }
-                    DB.save(__dirname + "/TwitchBot/Config.json", options)
+                    DB.save(__dirname + "/Config.json", options)
                 } else if (command == "unpausebot" && options.botIsPaused) {
                     options.botIsPaused = false;
                     say(user, channel, "Bot un-paused", isPrivate);
@@ -614,7 +614,7 @@ function tryResolvingCommand(channel, user, message, isPrivate = false) {
                     } else {
                         statsDb.commandUsage[command.split(" ")[0]]++;
                     }
-                    DB.save(__dirname + "/TwitchBot/Config.json", options)
+                    DB.save(__dirname + "/Config.json", options)
                 } else if (user.mod || isAdmin(user.username)) {
                     //moderatorCommands
                     if (isAdmin(user.username)) {
@@ -693,13 +693,12 @@ function tryResolvingCommand(channel, user, message, isPrivate = false) {
             return false;
         }
     } catch (err) {
-        log(err, true)
+        log(err, true, "OTB")
         return false;
     }
 }
 
 function saveAll() {
-
     DB.save(options.viewerDbPath, viewerDB);
     DB.save(options.statsDbPath, statsDb)
     setTimeout(function () {
@@ -1278,7 +1277,7 @@ function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCom
     client.on("ban", function (channel, user, reason) {
         if (!options.markovLearningChannels.includes(channel)) {
             if (debug) {
-                log("[" + channel + "] Banned " + user + " for " + reason)
+                log("[" + channel + "] Banned " + user + " for " + reason, false, "IRC")
             }
             if (viewerDB.Viewers[user.username] != null) {
                 delete viewerDB.Viewers[user.username];
@@ -1363,7 +1362,7 @@ function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCom
         })
     }
 
-    log("Loading TwitchBot Plugins...")
+    log("Loading Open-Twitch-Bot Plugins...", false, "OTB")
     for (var i in botPlugins) {
         log("Plugin '" + i + "' loaded.")
         botPlugins[i].init(commands, events, markovReponses, options, viewerDB, display, say, statsDb);
@@ -1371,7 +1370,7 @@ function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCom
 
     setTimeout(function () {
         options.options.debug = debug;
-        DB.save(__dirname + "/TwitchBot/Config.json", options);
+        DB.save(__dirname + "/Config.json", options);
         options.options.debug = false;
         log("Connecting to twitch irc...")
         if (options.markovEnabled) {
