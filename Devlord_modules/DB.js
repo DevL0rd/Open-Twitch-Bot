@@ -1,4 +1,4 @@
-//Authour: DevL0rd
+//Authour: Dustin Harris
 //GitHub: https://github.com/DevL0rd
 var fs = require('fs');
 var mkdirp = require('mkdirp');
@@ -13,7 +13,7 @@ function save(path, obj) {
 	var contents = JSON.stringify(obj, null, "\t")
 	mkdirp(getDirName(path), function (err) {
 		if (err) throw err;
-		fs.writeFile(path, contents, function (err) {
+		fs.writeFileSync(path, contents, function (err) {
 			if (err) throw err;
 		});
 	});
