@@ -3,6 +3,7 @@
 	"Author": "DevL0rd",
 	"IP": "0.0.0.0",
 	"PORT": 80,
+	"workerPORT": 8080,
 	"timeout": 5000,
 	"maxHeadersCount": 20,
 	"maxPostSizeMB": 8,
@@ -36,7 +37,8 @@
 		"blockedPaths": [],
 		"blockedFiles": [],
 		"blockedFileNames": [],
-		"blockedFileExtensions": []
+		"blockedFileExtensions": [],
+		"workerPassword": "$2a$08$UVK4i1mzFFEc1eqWmV/mRO1IsQkkojpJrRkMpDm4hA7SGLFWcrdS2"
 	},
 	"logging": {
 		"enabled": true,
