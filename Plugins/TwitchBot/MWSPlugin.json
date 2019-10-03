@@ -1,6 +1,7 @@
 {
 	"author": "Dustin Harris",
 	"enabled": true,
+	"loadWhenInWorkerMode": false,
 	"loadPriority": "0",
 	"name": "TwitchBot",
 	"varName": "TwitchBot"

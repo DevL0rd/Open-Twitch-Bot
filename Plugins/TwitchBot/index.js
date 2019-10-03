@@ -761,7 +761,7 @@ setInterval(function () {
 var ChatsBeforeTimeout = 0;
 var ChatsBeforeTimeoutTimeout
 
-function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCommands) {
+function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCommands, workerIo) {
     log = newlog
     //on io connection, setup client data
     serverEvents['connection'].push(function (socket) {
