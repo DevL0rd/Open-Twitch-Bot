@@ -13,9 +13,8 @@
 	"webRoot": "../Open-Twitch-Bot/WebRoot",
 	"pluginsPath": "../Open-Twitch-Bot/Plugins",
 	"upload": {
-		"enabled": true,
-		"limitMB": 0,
-		"path": "../Open-Twitch-Bot/Uploads"
+		"enabled": false,
+		"limitMB": 0
 	},
 	"throttling": {
 		"videoBitRateKB": 51000,
