@@ -1,6 +1,6 @@
 {
 	"Name": "Open-Twitch-Bot",
-	"Author": "DevL0rd",
+	"Author": "",
 	"IP": "0.0.0.0",
 	"PORT": 80,
 	"timeout": 5000,
@@ -12,6 +12,11 @@
 	],
 	"webRoot": "../Open-Twitch-Bot/WebRoot",
 	"pluginsPath": "../Open-Twitch-Bot/Plugins",
+	"upload": {
+		"enabled": true,
+		"limitMB": 0,
+		"path": "../Open-Twitch-Bot/Uploads"
+	},
 	"throttling": {
 		"videoBitRateKB": 51000,
 		"audioBitRateKB": 230,
@@ -19,6 +24,7 @@
 	},
 	"defaultHeaders": {
 		"Cache-Control": "max-age=0",
+		"X-Frame-Options": "SAMEORIGIN",
 		"X-XSS-Protection": "1; mode=block",
 		"X-Content-Type-Options": "nosniff"
 	},
@@ -54,6 +60,7 @@
 		"workerPORT": 8080,
 		"enabled": false,
 		"clusteredFileSync": false,
-		"workerPassword": "$2a$08$QS2m8v3lGwWelBzw2W60UelvKdYLUwjlCNP07.UNnT4r9SsxgcXGK"
-	}
+		"workerPassword": "$2a$08$LPGl53poLFCjWgoLblRDF.J1AitniTQLGhnjKhqt1OE.x0u4KQ9vm"
+	},
+	"projectPath": "../Open-Twitch-Bot"
 }
