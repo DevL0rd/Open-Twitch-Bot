@@ -23,7 +23,7 @@
 	},
 	"defaultHeaders": {
 		"Cache-Control": "max-age=0",
-		"X-Frame-Options": "SAMEORIGIN",
+		"X-Frame-Options": "",
 		"X-XSS-Protection": "1; mode=block",
 		"X-Content-Type-Options": "nosniff"
 	},

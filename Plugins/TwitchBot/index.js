@@ -764,13 +764,13 @@ var ChatsBeforeTimeoutTimeout
 function init(serverPlugins, serverSettings, serverEvents, io, newlog, serverCommands, workerIo) {
     log = newlog
     //on io connection, setup client data
-    serverEvents['connection'].push(function (socket) {
+    serverEvents.on("connection", function (socket) {
         socket.on('audioComplete', function (msgObject) {
             for (i in events["audioComplete"]) {
                 events["audioComplete"][i]()
             }
         });
-    });
+    }, "Open Twitch Bot");
 
 
     client.on("connected", function (address, port) {
