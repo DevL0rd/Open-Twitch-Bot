@@ -1,6 +1,5 @@
 {
     "dependencies": {
-        "mkdirp": "latest",
         "tmi.js": "latest",
         "youtube-node": "latest",
         "deck": ">=0.0.3",
